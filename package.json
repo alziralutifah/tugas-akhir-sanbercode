@@ -1,0 +1,21 @@
+{
+  "name": "tugas-akhir-sanbercode",
+  "version": "1.0.0",
+  "description": "Project UI testing automation web app Kasir Aja using Webdriver.io and Cucumber.",
+  "main": "index.js",
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js",
+    "allure-report": "allure generate reports/allure-results/ --clean && allure open"
+  },
+  "author": "Alzira Lutifah",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^9.4.5"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.4.4",
+    "@wdio/cucumber-framework": "^9.4.4",
+    "@wdio/local-runner": "^9.4.5",
+    "@wdio/spec-reporter": "^9.4.4"
+  }
+}
