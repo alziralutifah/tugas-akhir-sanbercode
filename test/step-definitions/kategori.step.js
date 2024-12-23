@@ -5,7 +5,7 @@ const LoginPage = require('../pageobjects/login.page.js');
 const DashboardPage = require('../pageobjects/dashboard.page.js');
 const LogoutPage = require('../pageobjects/logout.page.js');
 
-Before(async () => {
+Before({tags: '@kategori'}, async () => {
     await Page.open('/');
     await LoginPage.login('bakery@gmail.com', 'qwerty123#');
 });
@@ -90,7 +90,7 @@ Then(/^I log out of the application$/, async () => {
     
 });
 
-After(async () => {
+After({tags: '@kategori'}, async () => {
     await LogoutPage.logout();  
 });
 
