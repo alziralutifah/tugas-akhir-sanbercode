@@ -14,8 +14,8 @@ The results of the automation tests are recorded and can be found in the followi
 To run the tests locally:
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/repository-name.git
-cd repository-name
+git clone https://github.com/alziralutifah/tugas-akhir-sanbercode.git
+cd tugas-akhir-sanbercode
 ```
 2. Install dependencies:
 ```bash
@@ -27,7 +27,7 @@ npm run wdio
 ```
 
 ## Allure Report
-
+![C:\Users\Dell\Documents\sanbercode\tugas-akhir-sanbercode\allure-report kasiraja.png](https://github.com/alziralutifah/tugas-akhir-sanbercode/blob/main/allure-report%20kasiraja.png)
 
 
 ## Project Structure

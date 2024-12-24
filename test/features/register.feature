@@ -4,22 +4,20 @@ Feature: Registration on Kasiraja Web Application
   @all @positive @smoke
   Scenario Outline: Successful registration
     Given I open Kasiraja website and click the Daftar link
-    When I fill in <nama toko> and <email> and <password>
+    When Input data <nama toko> and <email> and <password>
     And I click daftar button
-    Then I should be redirected to login page
+    Then The system be redirected to login page
 
     Examples:
       | nama toko           | email                | password             | 
       | Bakeryalz           | random_email         | qwerty123#           |           
 
-
-
-  @all @negative @registnegative
+  @all @negative 
   Scenario Outline: Failed registration with invalid credentials
     Given I open Kasiraja website and click the Daftar link
-    When I fill in <nama toko> and <email> and <password>
+    When Input data <nama toko> and <email> and <password>
     And I click daftar button
-    Then I should see a validation <error message>
+    Then The system displays a validation <error message>
 
     Examples:
       | nama toko                                                                                                                                                                                                                                                                           | email                 | password      | error message                                                                  |   

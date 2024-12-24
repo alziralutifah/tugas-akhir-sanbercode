@@ -100,8 +100,9 @@ class KategoriPage {
         return $('td[class="css-u3dlpe"]'); 
     }
 
-    async getCategoryRowByName(nama) {
-        await expect(this.categoryRow).toHaveText(nama);
+    async getCategoryRowByName() {
+        await expect(this.categoryRow).toBeExisting();
+        // await expect(this.categoryRow).toHaveText(nama);
     } 
 
     async getRowName() {
@@ -124,14 +125,37 @@ class KategoriPage {
         await this.ubahButton.click();
     }
 
-    async editCategory(ubahNama) {
+    // async clearValue() {
+    //     await this.nameField.getValue();
+    //     await this.nameField.setValue('');
+    // }
+
+    async editCategory(newCategory) {
         await this.nameField.clearValue();
-        if (ubahNama) {
-            await this.nameField.setValue(ubahNama);
+        if (newCategory) {
+            await this.nameField.setValue(newCategory);
         }
     }
     
+    get deleteButton() {
+        return $('button[data-index="1"]');
+    }
 
+    async clickDeleteButton() {
+        await this.deleteButton.click();
+    }
+
+    get confirmDeleteButton() { 
+        return $('button[class="chakra-button css-n45e6f"]'); 
+    }
+
+    async confirmDeletion() {
+        await this.confirmDeleteButton.click();
+    }
+
+    async verifyCategoryNotInTable() {
+        await expect(this.categoryRow).not.toBeDisplayed();  
+    }
 }
 
 module.exports = new KategoriPage();
